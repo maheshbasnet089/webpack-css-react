@@ -9,9 +9,9 @@ module.exports = {
     devtool : !isProduction ? 'source-map' : false, 
     output : {
         path : path.resolve(__dirname,'dist'), 
-        filename : '[name].[hash:8].js', 
-        sourceMapFilename : '[name].[hash:8].map', 
-        chunkFilename : '[id].[hash:8].js', 
+        filename : '[name].[fullhash:8].js', 
+        sourceMapFilename : '[name].[fullhash:8].map', 
+        chunkFilename : '[id].[fullhash:8].js', 
         publicPath : "/",
     }, 
     resolve : {
