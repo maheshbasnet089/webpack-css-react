@@ -1,12 +1,12 @@
 import {createRoot} from 'react-dom/client'
 import React from 'react'
+import styles from './index.css'
 
-const App = ()=>{
-    return <div>Hello world</div>
-}
+console.log(styles)
+const Button = ()=>(
+    <button className={styles.button}>Click me!</button>
+)
 
 createRoot(document.getElementById('root') as HTMLElement).render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>
+    <Button/>
 )

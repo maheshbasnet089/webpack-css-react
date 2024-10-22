@@ -15,7 +15,7 @@ module.exports = {
         publicPath : "/",
     }, 
     resolve : {
-        extensions : ['.ts','.tsx','.js','.josn','.css']
+        extensions : ['.ts','.tsx','.js','.json','.css']
     }, 
     target : 'web', 
     mode : isProduction ? 'production' : 'development',
@@ -32,11 +32,20 @@ module.exports = {
                 }
             }, 
             {
-                test : /\.css/, 
-                use : [
-                    'style-loader', 
-                    'css-loader?module=true'
-                ]
+                test : /\.css$/, 
+                use: [
+                    {
+                    loader: 'style-loader'
+                    },
+                    {
+                    loader: 'css-loader',
+                    options: {
+                    modules: {
+                    localIdentName: '[local]--[hash:base64:5]'
+                    }
+                    }
+                    }
+                    ]
             }
         ]
     }, 
